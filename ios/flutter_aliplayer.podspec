@@ -16,7 +16,7 @@ A new flutter plugin project.
   s.source_files = 'Classes/**/*'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
-  s.dependency 'AliPlayerSDK_iOS', '5.5.6.0'
+  s.dependency 'AliPlayerSDK_iOS', '6.9.0'
   
   #s.dependency 'AliPlayerSDK_iOS_ARTC', '5.5.6.0'
   #s.dependency 'RtsSDK', '2.5.0'
