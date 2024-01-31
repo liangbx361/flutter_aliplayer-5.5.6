@@ -1,0 +1,6 @@
+{
+    "dart.flutterSdkPath": ".fvm/flutter_sdk", // 指定FVM中的Flutter SDK路径
+    "dart.sdkPaths": [".fvm/flutter_sdk/bin/cache/dart-sdk"], // 指定FVM中Dart SDK的路径
+    "dart.flutterSdkVersion": null, // 留空，以使用FVM管理的Flutter版本
+    "dart.sdkPath": null // 留空，以使用FVM管理的Dart SDK版本
+  }
