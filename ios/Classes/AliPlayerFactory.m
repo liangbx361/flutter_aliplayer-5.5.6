@@ -686,7 +686,13 @@ typedef NS_ENUM(NSInteger, AliPlayerAudioSesstionType) {
     } else {
         docDir = [docDir stringByAppendingPathComponent:@"localCache"];
     }
-        
+    
+    [AliPlayerGlobalSettings enableLocalCache:enableLocalCache maxBufferMemoryKB:[val[@"maxBufferMemoryKB"] intValue] localCacheDir:docDir];
+    
+    // if (enableLocalCache) {
+    //     [AliPlayerGlobalSettings setCacheUrlHashCallback:hashCallback];
+    // }
+    
     result(nil);
 }
 
@@ -697,6 +703,19 @@ typedef NS_ENUM(NSInteger, AliPlayerAudioSesstionType) {
     
     [AliPlayerGlobalSettings setCacheFileClearConfig:[val[@"expireMin"] longLongValue] maxCapacityMB:[val[@"maxCapacityMB"] longLongValue] freeStorageMB:[val[@"freeStorageMB"] longLongValue]];
     result(nil);
+}
+
+- (void)setCacheUrlHashCallback:(NSArray*)arr {
+    FlutterResult result = arr[1];
+    
+    [AliPlayerGlobalSettings setCacheUrlHashCallback:hashCallback];
+    result(nil);
+}
+
+NSString *hashCallback(NSString* url) {
+    NSArray *array = [[url stringByReplacingOccurrencesOfString:@"https" withString:@"http"] componentsSeparatedByString:@"?"];
+    NSString *md5Str = array.firstObject;
+    return [AliPlayerFactory md5:md5Str];
 }
 
 + (NSString *) md5:(NSString *) input {
