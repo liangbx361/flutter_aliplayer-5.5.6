@@ -47,6 +47,6 @@ android {
 }
 
 dependencies {
-    implementation 'com.aliyun.sdk.android:AliyunPlayer:6.9.0-full'
+    implementation 'com.aliyun.sdk.android:AliyunPlayer:6.18.0-full'
     implementation 'com.google.code.gson:gson:2.8.6'
 }
